@@ -9,17 +9,13 @@
 		<thead>
 		<tr>
 			<td>Nama</td>
-			<td>Hak</td>
 			<td>Terpakai</td>
-			<td>Saldo</td>
 		</tr>
 		</thead>
 	@foreach ($laporan as $nama => $data)
 		<tr>
 			<td>{{ $nama }}</td>
-			<td>{{ $data["hak"] }}</td>
 			<td>{{ $data["terpakai"] }}</td>
-			<td>{{ $data["saldo"] }}</td>
 		</tr>
 	@endforeach
 	</table>

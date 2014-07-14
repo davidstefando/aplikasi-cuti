@@ -71,9 +71,7 @@
 									->get();
 
 				foreach ($pemakaian as $key => $data) {
-						$laporan[$data->nama]['hak'] = $data->hak;
 						$laporan[$data->nama]['terpakai'] = $data->terpakai;
-						$laporan[$data->nama]['saldo'] = $data->saldo;
 				}
 
 				return View::make('kelola.laporan.bagian', compact('laporan'));
