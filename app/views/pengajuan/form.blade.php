@@ -28,11 +28,13 @@
 					{{ Form::text('selesai') }}
 				</div>
 				<div class="form-control">
-					Tuliskan alasan anda mengambil cuti ini<br>
+					<label>Tuliskan alasan anda mengambil cuti ini</label>
 					{{ Form::textarea('alasan') }}
 				</div>
-				<input type="submit" value="Konfirmasi" class="btn primary right">
-				<input type="reset" value="Reset" class="btn danger right">
+				<div class="form-control">
+					<input type="submit" value="Konfirmasi" class="btn primary right">
+					<input type="reset" value="Reset" class="btn danger right">
+				</div>
 			{{ Form::close() }}
 		</div>
 	</div>
