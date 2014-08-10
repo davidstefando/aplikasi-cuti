@@ -10,8 +10,9 @@ Menu::addPrimaryMenu(array('name' => 'pengajuan', 'url' => 'pengajuan', 'text' =
 Menu::addSecondaryMenu(array('url' => 'pengajuan', 'text' => 'PENGAJUAN CUTI', 'icon' => 'fa fa-file-o', 'parent' => 'pengajuan'));
 Menu::addSecondaryMenu(array('url' => 'status', 'text' => 'STATUS PENGAJUAN', 'icon' => 'fa fa-eye', 'parent' => 'pengajuan'));
 Menu::addSecondaryMenu(array('url' => 'saldo', 'text' => 'SALDO CUTI', 'icon' => 'fa fa-tasks', 'parent' => 'pengajuan'));
-Menu::addSecondaryMenu(array('url' => 'history', 'text' => 'HISTORY CUTI', 'icon' => 'fa fa-calendar', 'parent' => 'pengajuan'));
-	
+Menu::addSecondaryMenu(array('url' => 'history', 'text' => 'HISTORY CUTI', 'icon' => 'fa fa-calendar', 'parent' => 'pengajuan'));	
+Menu::addSecondaryMenu(array('url' => 'changepassword', 'text' => 'GANTI PASSWORD', 'icon' => 'fa fa-gear', 'parent' => 'pengajuan'));	
+
 
 $allowed = array('pimpinan', 'hr');
 if (in_array($jabatan , $allowed)) {

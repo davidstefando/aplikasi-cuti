@@ -74,4 +74,8 @@ Route::get('autocomplete/{id}', array('uses' => 'KaryawanController@getAutocompl
 Route::get('read/{id}', array('uses' => 'SiteController@readNotification'));
 Route::get('notification', array('uses' => 'SiteController@getNotificationFor'));
 Route::get('notification-count', array('uses' => 'SiteController@getUnreadNotificationCountFor'));
+
+Route::get('changepassword', array('uses' => 'KaryawanController@showChangePasswordForm'));
+Route::post('changepassword', array('uses' => 'KaryawanController@changePassword'));
+
 require "menu.php";
