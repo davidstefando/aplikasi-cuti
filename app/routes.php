@@ -70,4 +70,8 @@ Route::get('cetak/{id}', array('as' => 'cetak', 'uses' => 'PengajuanController@s
 //sugesti autocomplete data karyawan berdasarkan "nik"
 Route::get('autocomplete/{id}', array('uses' => 'KaryawanController@getAutocompleteSuggestion'));
 
+//notifikasi
+Route::get('read/{id}', array('uses' => 'SiteController@readNotification'));
+Route::get('notification', array('uses' => 'SiteController@getNotificationFor'));
+Route::get('notification-count', array('uses' => 'SiteController@getUnreadNotificationCountFor'));
 require "menu.php";

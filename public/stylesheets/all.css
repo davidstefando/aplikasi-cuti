@@ -2236,7 +2236,7 @@ header .notification {
     cursor: pointer
 }
 
-header .notification:hover {
+header .notification label:hover {
     font-weight: bold
 }
 
@@ -2259,7 +2259,28 @@ header .notification .notification-messages {
     width: 300px;
     height: 400px;
     background-color: #ffffff;
-    box-shadow: 0 1px 2px 1px #888888
+    box-shadow: 0 1px 2px 1px #888888;
+    color:#181818;
+    overflow: auto;
+}
+
+
+.notification-message{
+    padding:5px;
+}
+
+.notification-message a{
+    color: #181818;
+    text-decoration: none;
+}
+
+.notification-message.unread{
+    background-color: #e1e1e1;
+}
+
+.notification-message .timestamp{
+    font-size: 10px;
+    color:#888888;
 }
 
 .primary-navigation ul {

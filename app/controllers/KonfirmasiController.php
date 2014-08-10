@@ -39,6 +39,13 @@
 			} else if ('hr') {
 				$pengajuan->disetujui_hr = 1;
 				$pengajuan->status = '<label class="success">Diterima</label>';
+
+				//beritahu user
+				Notifikasi::create(array(
+					'to' => $pengajuan->nik, 
+					'status' => 'unread', 
+					'content' => "Pengajuan Cuti " . $pengajuan->cuti->nama . " tanggal $pengajuan->tanggal telah disetujui"
+				));
 			}
 			$pengajuan->save();
 		}
@@ -47,6 +54,7 @@
 		{
 			$this->id = $id;
 			$this->setTolakOleh(Auth::user()->jabatan);
+
 			return Redirect::to('konfirmasi');
 		}
 
@@ -57,6 +65,15 @@
 				$pengajuan->disetujui_pimpinan = 0;
 			} else if ('hr') {
 				$pengajuan->disetujui_hr = 0;
+
+							
+				//beritahu user
+				Notifikasi::create(array(
+					'to' => $pengajuan->nik, 
+					'status' => 'unread', 
+					'content' => "Pengajuan Cuti " . $pengajuan->cuti->nama . " tanggal $pengajuan->tanggal ditolak"
+				));
+
 			} 
 			$pengajuan->status = '<label class="danger">Ditolak</label>';
 			$pengajuan->save();
