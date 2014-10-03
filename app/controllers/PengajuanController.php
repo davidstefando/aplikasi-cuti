@@ -11,8 +11,13 @@ use \Carbon\Carbon;
 
 		public function showVerifikasi()
 		{
-			if ($this->valid(Input::all()) &&
-				$this->masihBolehMengambilCuti()) {
+			if ($this->masihBolehMengambilCuti()) {
+
+					if (!$this->valid()){
+						return Redirect::to('pengajuan')
+								->withInput()
+								->withErrors('Tanggal Tidak Valid');
+					}
 
 					Session::put('nik', Auth::user()->nik);
 					Session::put('id_cuti', Input::get('id_cuti'));
@@ -37,7 +42,13 @@ use \Carbon\Carbon;
 
 		private function valid()
 		{
-			return true;
+			$start = \Carbon\Carbon::createFromFormat('Y-m-d', Input::get('mulai'));
+			$end = \Carbon\Carbon::createFromFormat('Y-m-d', Input::get('selesai'));
+			if ($start->lt($end) && 
+				$start->gt(\Carbon\Carbon::now()) &&
+				$end->gt(\Carbon\Carbon::now())) {
+					return true;		
+				}
 		}
 
 		private function masihBolehMengambilCuti() 
