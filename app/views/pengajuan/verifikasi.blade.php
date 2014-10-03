@@ -57,7 +57,7 @@
 			<p>Harap pastikan data tersebut benar dan dapat dipertanggung jawabkan, setelah proses konfirmasi data tidak dapat diperbaiki lagi</p>
 
 			{{ link_to('pengajuan/ajukan', 'Verifikasi', array('class' => 'btn primary right')) }}
-			<a href="/pengajuan" class="btn danger right">Batalkan</a>
+			{{ link_to('pengajuan', 'Batalkan', array('class' => 'btn danger right')) }}
 		</div>
 	</div>
 @stop
