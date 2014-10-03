@@ -48,6 +48,15 @@
 					<td>{{ Session::get('mulai') . ' sampai ' . Session::get('selesai') }}</td>
 				</tr>
 				<tr>
+					<td>Lama Cuti</td>
+					<td>:</td>
+					<td>{{ \Carbon\Carbon::createFromFormat('Y-m-d', Session::get('mulai'))
+							->diffInDays(\Carbon\Carbon::createFromFormat('Y-m-d', Session::get('selesai'))) }}
+						Hari
+					</td>
+
+				</tr>
+				<tr>
 					<td>Alasan</td>
 					<td>:</td>
 					<td>{{ nl2br(Session::get('alasan')) }}</td>
