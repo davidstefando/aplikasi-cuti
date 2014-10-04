@@ -21,7 +21,7 @@
 					<!-- <td>10%</td> -->
 					<td>
 						{{ link_to_route('setuju', 'Setuju', $data->id, array('class' => 'btn primary small')) }}
-						{{ link_to_route('tolak', 'Tolak', $data->id, array('class' => 'btn danger small')) }}
+						{{ link_to_route('tolak', 'Tolak', $data->no_spl, array('class' => 'btn danger small', 'onclick' => "prompt('Masukkan Alasan Penolakan')")) }}
 					</td>
 				</tr>
 			@endforeach
