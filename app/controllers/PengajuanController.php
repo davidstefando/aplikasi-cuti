@@ -73,8 +73,8 @@ use \Carbon\Carbon;
  			$pengajuan->mulai = Session::get('mulai');
  			$pengajuan->selesai = Session::get('selesai');
  			$pengajuan->alasan = Session::get('alasan');
- 			$pengajuan->disetujui_pimpinan = 2;
-			$pengajuan->disetujui_hr = 2;
+ 			$pengajuan->disetujui_pimpinan = 0;
+			$pengajuan->disetujui_hr = 0;
  			$pengajuan->status = "<label class='danger'>Belum Disetujui</label>";
  			$pengajuan->save();
 
